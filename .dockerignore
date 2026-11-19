@@ -1,0 +1,15 @@
+.venv/
+
+__pycache__/
+
+.git/
+
+.env
+
+.aws/
+
+*.pem
+
+results/
+
+*.txt
