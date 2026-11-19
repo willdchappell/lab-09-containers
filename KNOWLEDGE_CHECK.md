@@ -7,9 +7,8 @@
 Assume you want to share your image with others and make it publicly available on `ghcr.io`, so that anyone can pull it and run the analysis. A teammate suggests adding `COPY .aws /home/app/.aws` to the `Dockerfile`, so that nobody has to type `-v ~/.aws:/home/app/.aws:ro` any more. (This is a thought experiment: keep your own package private.)
 
 **Your answer:** Give two reasons why this is a bad idea. Think of who could then read your credentials, and of what happens when your Learner Lab session ends.
-this is a bad idea because aadding the copy statement would add my credentials for my "account" to the container. This means poeple even without credentials could have access to the AWS services, which using my credentials has access to some private s3 buckets. We also get cerdentials refreshed, and this would not account for that, meaning the container would use meaningless credentials.
+this is a bad idea because aadding the copy statement would add my credentials for my "account" to the container. This means poeple even without credentials could have access to the AWS services, which using my credentials has access to some private s3 buckets. We also get credentials refreshed, and this would not account for that, meaning the container would use meaningless credentials.
 
-...
 
 
 ## 2. Where did the Atlas password come from?
@@ -36,5 +35,5 @@ book-analysis:0.1.0   94cdc5a6dedf
 New:
 book-analysis:0.1.0   99be88165af4
 
-I shoudl have changed the versiuon because although a different ID, it is easier to understand that it is a different version when you change the actual name. Someone also could have pulled from the old ID, and now we have both under the same name, so we both can say we are runnign the same version because we have the same name, but we might not be running the same thing.
+I shoudl have changed the versiuon because although a different ID, it is easier to understand that it is a different version when you change the actual name. Someone also could have pulled from the old ID, and now we have both under the same name, so we both can say we are runnign the same version because we have the same name, but we might not be running the same thing. After I have the new image with the same name, I will not be able to get back to the old version either.
 
